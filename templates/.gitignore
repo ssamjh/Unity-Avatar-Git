@@ -1,0 +1,44 @@
+# Place this file in the root of a Unity project.
+# These rules cover common generated output only. Add project-specific exclusions
+# explicitly after reviewing what the project needs to keep.
+
+# Unity-generated cache and local editor data
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+
+# Build output
+/[Bb]uild/
+/[Bb]uilds/
+
+# Optional: ignore captures or recordings only if you do not need to keep them.
+# /[Mm]emoryCaptures/
+# /[Rr]ecordings/
+
+# Unity-generated solution and project files at the repository root
+/ExportedObj/
+/.consulo/
+/*.csproj
+/*.unityproj
+/*.sln
+/*.slnx
+/*.suo
+/*.user
+/*.userprefs
+/*.pidb
+/*.booproj
+/*.svd
+/*.opendb
+/*.VC.db
+/*.VC.VC.opendb
+
+# Root IDE caches
+/.vs/
+/.gradle/
+
+# OS metadata
+.DS_Store
+Thumbs.db
+Desktop.ini
