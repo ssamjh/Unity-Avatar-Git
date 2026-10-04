@@ -1,6 +1,6 @@
 # Place this file in the root of a Unity project.
-# These rules cover common generated output only. Add project-specific exclusions
-# explicitly after reviewing what the project needs to keep.
+# These defaults exclude generated output and project-specific content listed below.
+# Add other exclusions only after reviewing what the project needs to keep.
 
 # Unity-generated cache and local editor data
 /[Ll]ibrary/
@@ -12,6 +12,18 @@
 # Build output
 /[Bb]uild/
 /[Bb]uilds/
+
+# Project-specific data and IDE settings excluded by default
+/Thry/preset_cache.txt
+/Thry/presets_known_materials.txt
+/Thry/trash/
+/.vscode/
+
+# Keep only package manifests and lockfile in Packages/
+/Packages/*
+!/Packages/manifest.json
+!/Packages/packages-lock.json
+!/Packages/vpm-manifest.json
 
 # Optional: ignore captures or recordings only if you do not need to keep them.
 # /[Mm]emoryCaptures/

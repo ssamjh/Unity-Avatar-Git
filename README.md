@@ -6,13 +6,13 @@ If the Unity project does not already use Git, initialize a repository in its ro
 
 ## What the templates do
 
-The ignore template excludes the Unity cache and local-data folders `/Library`, `/Temp`, `/Obj`, `/Logs`, and `/UserSettings`, root `/Build` and `/Builds` output folders, generated root project files, IDE caches, and operating-system metadata. It leaves `Assets/`, `Packages/`, `ProjectSettings/`, Thry data, archives, captures, recordings, and other project files visible to Git. Optional commented rules show how to exclude capture and recording folders if you choose. Keep Unity `.meta` files alongside their assets.
+The ignore template excludes the Unity cache and local-data folders `/Library`, `/Temp`, `/Obj`, `/Logs`, and `/UserSettings`, root `/Build` and `/Builds` output folders, root `/.vscode/`, generated root project files, other IDE caches, and operating-system metadata. Under `/Thry/`, it excludes only `/Thry/preset_cache.txt`, `/Thry/presets_known_materials.txt`, and `/Thry/trash/`; other Thry configuration and persistent data remain visible. In `/Packages/`, only the root `manifest.json`, `packages-lock.json`, and `vpm-manifest.json` are kept visible by default; package payloads, resolver data, and embedded package source are ignored. `Assets/`, `ProjectSettings/`, archives, captures, recordings, and other project files remain visible. Optional commented rules show how to exclude capture and recording folders if you choose. Keep Unity `.meta` files alongside their assets.
 
 The attributes template routes common binary media extensions and `.unitypackage` files through Git LFS, regardless of size. Unity text and YAML files remain in regular Git. It cannot identify every unusual binary Unity serialized file; add a visible, specific LFS rule for any such file type or path you use.
 
-These defaults are intentionally conservative, but each project is different. Review the ignore rules and Git's status before staging. If you know a particular package folder contains only data that your package manager can restore, you may choose to ignore that exact folder by adding a rooted path such as `/Packages/com.vendor.restorable-package/` to the project's `.gitignore`. Do not add broad rules for all of `Packages/` or file extensions that may also match project source. Ignore rules do not stop tracking files already committed.
+Review the ignore rules and Git's status before staging. If you need to include a local or embedded package that is not represented by a manifest, add explicit project-specific exceptions for that package and its contents to the project's `.gitignore`. Ignore rules do not stop tracking files already committed.
 
-For VRChat projects, VCC can restore declared VPM dependencies. The templates leave package manifests, resolver data, vendor packages, and embedded package source available for you to include or exclude according to your project's needs.
+For VRChat projects, VCC can restore declared VPM dependencies from the kept manifests. Package files are not included by default; add explicit exceptions for any local or embedded package content you need in version control.
 
 ## Requirements and references
 
